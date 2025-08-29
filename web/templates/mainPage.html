@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="en">       
+    <head>             
+        <title>Boolean model         
+        </title>             
+        <meta charset='utf-8'>             
+        <meta name="viewport" content="width=device-width, initial-scale=1">    
+    </head>
+    <body>                
+        <div class=header>                   
+            <header id="header" class="header">        
+              <h1> Rozšířený booleovský model vyhledávání dokumentů</h1>                   
+            </header>             
+        </div>                  
+        <div>                                          
+            <fieldset id="fieldset1" class="fieldset1">                                                   
+                <p>
+                <form method="POST">
+                  <label id="exp">  Zadejte výraz: </label>
+                  <input type="text" name="expression"/>
+                  <br><br>
+                  <input type="radio" name="drone" id="seq" value="seq">
+                    <label for="seq"> Sekvenční </label>
+                  <input type="radio" name="drone" id="map" value="map">
+                    <label for="map"> Inverted-Index </label>
+                  <br>
+                  <input type=submit value="Vyhodnotit výraz"/>
+                </form>
+                <p>
+                  <p>
+                    <fieldset id="fieldset2" class="fieldset2">
+                      <legend id="ans"> Výsledek vyhledávání </legend>
+                        <p>
+                            {{ stat_res | safe }}
+                            <label style="display: block; text-align: center;" id="name" class="name"> Název souboru a váha: </label>
+                        <hr>
+                        <br>
+                        {{ result | replace('\n', '<br>') | safe }}
+                    </fieldset>
+            </fieldset>
+        </div>                  
+        <div>                   
+            <footer id="footer" class="clear">
+                <p class="fl_left">Vytvořili: Jakub Richtár & Tomáš Peterka </p>
+            </footer>             
+        </div>
+    </body>
+</html>
